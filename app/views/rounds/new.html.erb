@@ -1,0 +1,20 @@
+<h1>hi ryan</h1>
+<p>something else</p>
+
+<%= form_for [@event, @round] do |f| %>
+  <div class="field">
+    <%= f.label :name %></br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :order %></br>
+    <%= f.number_field :order %>
+  </div>
+  <div class="field">
+    <%= f.label :payout %></br>
+    <%= f.number_field :payout %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

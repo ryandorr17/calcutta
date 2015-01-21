@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  order: 1
+  event_id: 
+
+two:
+  name: MyString
+  order: 1
+  event_id: 

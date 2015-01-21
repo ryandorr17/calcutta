@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calcutta3</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Changa+One:400,400italic|Open+Sans:600italic,400,700|Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/responsive.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <header>
+    <a href="/welcome/index.html" id="logo">
+      <h1>Calcutta Auction</h1>
+      <h2>Host your auction today</h2>
+    </a>
+
+    <nav>
+      <ul>
+        <li><a href="/about/index.html">About</a></li>
+        <li><a href="#">Sign In</a></li>
+        <li><a href="#">Sign Up</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+<%= yield %>
+
+  <!-- <footer>
+    <a href="http://twitter.com"><img src="img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+    <a href="http://facebook.com"><img src="img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
+    <p>&copy; 2014 Ryan Dorr.</p>
+
+  </footer> -->
+
+
+
+
+
+</body>
+</html>

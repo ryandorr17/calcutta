@@ -1,0 +1,122 @@
+<div id="wrapper">
+
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @event.name %>
+  </p>
+
+  <p>
+    <strong>Sport:</strong>
+    <%= @event.sport %>
+  </p>
+
+  <p>
+    <strong>League:</strong>
+    <%= @event.league %>
+  </p>
+
+  <p>
+    <strong>Start date:</strong>
+    <%= @event.start_date %>
+  </p>
+
+  <p>
+    <strong>Cutoff:</strong>
+    <%= @event.cutoff %>
+  </p>
+
+  <%= link_to 'Edit', edit_event_path(@event) %> |
+  <%= link_to 'Back', events_path %>
+
+
+
+  </br></br></br>
+  <h2>Entrants Section</h2></br></br>
+
+  <h2>Add an Entrant:</h2>
+  <%= form_for([@event, @event.entrants.build]) do |f| %>
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :order %><br>
+      <%= f.number_field :order %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+
+  </br></br></br>
+
+  <h2>Entrants</h2>
+  <% @event.entrants.each do |entrant| %>
+    <p>
+      <strong>Name:</strong>
+      <%= entrant.name %>
+    </p>
+
+    <p>
+      <strong>Order:</strong>
+      <%= entrant.order %>
+    </p>
+    <p>
+    <%= link_to 'Delete Entrant', [entrant.event, entrant],
+                 method: :delete,
+                 data: { confirm: 'Are you sure?' } %>
+    </p>
+  <% end %>
+
+
+
+
+
+
+  <h1>Listing Rounds:</h1>
+
+  <%= form_for([@event, @event.rounds.build]) do |f| %>
+    <div class="field">
+      <%= f.label :name %></br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :order %></br>
+      <%= f.number_field :order %>
+    </div>
+    <div class="field">
+      <%= f.label :payout %></br>
+      <%= f.number_field :payout %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+
+  <table>
+    <head>
+      <tr>
+        <th>Name</th>
+        <th>Order</th>
+        <th>Payout %</th>
+        <th></th>
+      </tr>
+    </head>
+
+    <tbody>
+      <% @event.rounds.each do |round| %>
+      <tr>
+        <td><%= round.name %></td>
+        <td><%= round.order %></td>
+        <td><%= round.payout %></td>
+        <td><%= link_to 'Delete Round', [round.event, round],
+                     method: :delete,
+                     data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
