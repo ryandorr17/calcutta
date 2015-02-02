@@ -13,14 +13,16 @@
 <body>
 
   <header>
-    <a href="/welcome/index.html" id="logo">
+    <a href=<%= root_path %> id="logo">
       <h1>Calcutta Auction</h1>
       <h2>Host your auction today</h2>
     </a>
 
     <nav>
       <ul>
-        <li><a href="/about/index.html">About</a></li>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Blog", blog_path %></li>
+        <li><%= link_to "Help", help_path %></li>
         <li><a href="#">Sign In</a></li>
         <li><a href="#">Sign Up</a></li>
       </ul>
