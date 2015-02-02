@@ -10,7 +10,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href=<%= blog_path %>>
           <p>Learn more by following our blog</p>
         </a>
       </li>
@@ -19,12 +19,12 @@
       <h3>Start Playing Today!</h3>
         <ul id="gallery">
           <li>
-            <a href="#">
+            <a href=<%= new_auction_path %>>
               <p>Host an Auction</p>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href=<%= auctions_path %>>
               <p>Join an Auction</p>
             </a>
           </li>
@@ -34,6 +34,12 @@
   <h3>temporary links for administrators</h3>
   <ul>
     <li><%= link_to 'Events', events_path %></li>
+    <div>
+      <%= render 'events' %>
+    </div>
+    <div>
+      <%= render 'users' %>
+    </div>
 
 
 

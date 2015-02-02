@@ -1,0 +1,51 @@
+<h1>Auctions Page</h1>
+<p>This page will list all available auctions.</p>
+<p>Not sure about long term strategy about listing every available auction to every person,
+  but for now we will list them all and this is where users will join an auction.</p>
+
+
+
+
+<div id="wrapper">
+  <h1>All Available Auctions</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Event</th>
+        <th>Spots</th>
+        <th>Filled Spots</th>
+        <th>Available Spots</th>
+        <th>Soft Cap</th>
+        <th>Auction Date</th>
+        <th>Time Remaning</th>
+        <th>Join Auction!</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @auctions.each do |auction| %>
+        <tr>
+          <td><%= auction.name %></td>
+          <td><%= auction.event_id %></td>
+          <td><%= auction.number_participants %></td>
+          <td>Coming soon</td>
+          <td>Coming soon</td>
+          <td><%= auction.soft_cap%></td>
+          <td><%= auction.start %></td>
+          <td>Coming soon</td>
+          <td>Coming soon</td>
+          <td><%= link_to 'Show', auction %></td>
+          <td><%= link_to 'Edit', edit_auction_path(auction) %></td>
+          <td><%= link_to 'Delete', auction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'Create Another Auction', new_auction_path %>
+</div>

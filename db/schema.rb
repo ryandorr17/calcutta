@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150202125838) do
+ActiveRecord::Schema.define(version: 20150202142813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "auctions", force: true do |t|
+    t.string   "name"
+    t.integer  "number_participants"
+    t.datetime "start"
+    t.integer  "event_id"
+    t.integer  "soft_cap"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "entrants", force: true do |t|
     t.string   "name"

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :auctions
+
   resources :events do
     resources :rounds
     resources :entrants
