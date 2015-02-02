@@ -1,2 +1,40 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div id="wrapper">
+
+  <h1>Welcome to CalcuttaAuction.com</h1>
+
+  <section>
+    <ul id="gallery">
+      <li>
+        <a href=<%= about_path %>>
+          <p>What is calcutta a auction?</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <p>Learn more by following our blog</p>
+        </a>
+      </li>
+    </ul>
+    <div>
+      <h3>Start Playing Today!</h3>
+        <ul id="gallery">
+          <li>
+            <a href="#">
+              <p>Host an Auction</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p>Join an Auction</p>
+            </a>
+          </li>
+        </ul>
+  </section>
+
+  <h3>temporary links for administrators</h3>
+  <ul>
+    <li><%= link_to 'Events', events_path %></li>
+
+
+
+</div>
