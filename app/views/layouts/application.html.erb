@@ -29,7 +29,13 @@
 
   </header>
 
+
+  
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
 <%= yield %>
+<%= debug(params) if Rails.env.development? %>
 
   <!-- <footer>
     <a href="http://twitter.com"><img src="img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>

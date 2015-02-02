@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'blog'  => 'static_pages#blog'
   get 'signup'  => 'users#new'
 
+  resources :users
+
   resources :events do
     resources :rounds
     resources :entrants
