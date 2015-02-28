@@ -14,6 +14,6 @@ class EntrantsController < ApplicationController
 
   private
     def entrant_params
-      params.require(:entrant).permit(:name, :order)
+      params.require(:entrant).permit(:name, :order, :seed)
     end
 end

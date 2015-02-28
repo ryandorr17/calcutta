@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150202142813) do
+ActiveRecord::Schema.define(version: 20150228153458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150202142813) do
     t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "seed"
   end
 
   add_index "entrants", ["event_id"], name: "index_entrants_on_event_id", using: :btree
