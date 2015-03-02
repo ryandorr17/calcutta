@@ -5,6 +5,7 @@ class AuctionsController < ApplicationController
   end
 
   def show
+    @auction = Auction.find(params[:id])
   end
 
   def create

@@ -1,0 +1,32 @@
+<div class ="row">
+  <div class="col-md-6 col-md-offset-3">
+
+    <h1>Listing auction_participants</h1>
+
+    <table class="table table-striped table-condensed">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Auction</th>
+          <th>Onwer?</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @auction_participants.each do |auction_participant| %>
+          <tr>
+            <td><%= auction_participant.user_id %></td>
+            <td><%= auction_participant.auction_id %></td>
+            <td><%= auction_participant.owner_flag %></td>
+            <td><%= link_to 'Show', auction_participant %></td>
+            <td><%= link_to 'Edit', edit_auction_participant_path(auction_participant) %></td>
+            <td><%= link_to 'Destroy', auction_participant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Auction participant', new_auction_participant_path %>

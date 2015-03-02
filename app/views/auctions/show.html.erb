@@ -1,2 +1,33 @@
-<h1>Auction#show</h1>
-<p>Find me in app/views/auction/show.html.erb</p>
+<div class="container">
+  <div class="row">
+
+    <h1>Admin View of an auction</h1>
+    <p> Still need to add an edit action, don't click yet <%= link_to 'Edit', edit_auction_path(@auction) %></p>
+
+    <h3>Auction Paramters</h3>
+    <p>Auction name: <%= @auction.name %></p>
+    <p>Max Particpants: <%= @auction.number_participants %></p>
+    <!-- I know this line is wrong, need to fix -->
+    <p>Event: <%= Event.find(@auction.event_id).name %></p>
+    <p>Start Date: <%= @auction.start %></p>
+    <p>Soft Cap: <%= @auction.soft_cap %></p>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Auction Participants</h3>
+
+      <%= @auction.users.each do |participant| %>
+      <p><%= participant.name %></p>
+        <% end %>
+
+
+    </div>
+  </div>
+
+
+
+
+
+</div>

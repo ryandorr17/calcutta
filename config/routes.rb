@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :auction_participants
+
   get 'users/new'
 
   root 'static_pages#home'

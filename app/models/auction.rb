@@ -1,4 +1,6 @@
 class Auction < ActiveRecord::Base
-  belongs_to :user, touch: true
   has_one :event
+
+  has_many :auction_participants
+  has_many :users, through: :auction_participants
 end
